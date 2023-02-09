@@ -46,7 +46,7 @@ export default {
             label: "Data One",
             backgroundColor: "rgb(23 76 254)",
             barThickness: "15",
-            borderRadius: 50,
+            borderRadius: 500,
             borderSkipped: false,
           },
           {
@@ -61,6 +61,9 @@ export default {
       },
       chartOptions: {
         plugins: {
+            tooltip:{
+                enabled:false
+            },
           legend: {
             display: false,
           },
