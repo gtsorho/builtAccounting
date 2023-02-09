@@ -1,7 +1,7 @@
 <template>
   <div id="mySidenav" class="sidenav px-3" >
-  <span style="font-size:20px;cursor:pointer"  class="text-secondary humburger text-center me-2"  v-show="!sidebarVal" @click="sidebarVal = !sidebarVal; $emit('humburgerClick') ">&#9776;</span>
-    <span class="text-start" v-show="sidebarVal">
+  <span style="font-size:20px;cursor:pointer"  class="text-secondary humburger text-center me-2"  v-show="!sidebarbool" @click="sidebarbool = !sidebarbool; $emit('humburgerClick') ">&#9776;</span>
+    <span class="text-start" v-show="sidebarbool">
         <img  style="width:60%;" class="ms-0" src="../assets/logo1.png" > 
       <hr class=" mx-2" style="border: 1.55px solid rgb(120 120 120)">  
       <a href="#" class="btn my-2" @click="activeBtn = 'Dashboard'" :class="{active: activeBtn === 'Dashboard' }" ><i class="bi bi-columns-gap me-1" ></i>Dashboard</a>
@@ -30,10 +30,21 @@ export default {
         sidebarbool:this.sidebarVal
       }
     },
+    mounted(){
+      var w = window.innerWidth;
+      if(w < 750){
+        this.sidebarbool = false
+        document.getElementById("mySidenav").style.width = "50px";
+        document.getElementById("main").style.marginLeft= "50px";           
+      }else{
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px"; 
+      }
+    },
     watch:{
       sidebarVal(newVal){
         console.log(newVal)
-         if(newVal){
+        if(newVal){
             document.getElementById("mySidenav").style.width = "250px";
             document.getElementById("main").style.marginLeft = "250px";            
         }else{
@@ -48,6 +59,7 @@ export default {
 }
 </script>
 <style scoped>
+
  /* card style */
     /* margin: 10px; */
     /* width: 80.5% !important;*********************** */

@@ -66,6 +66,7 @@ export default {
           },
         },
         responsive: true,
+        maintainAspectRatio: true,
         scales: {
           x: {
             stacked: true,

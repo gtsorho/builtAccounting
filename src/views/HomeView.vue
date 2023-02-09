@@ -17,7 +17,7 @@
                   <button class=" btn btn-secondary btn-sm"  style="font-size:12px"> View All Orders</button>
                 </div>
               </div>
-              <div>
+              <div style="height:200px">
                 <Bar/>
               </div>
             </div>
