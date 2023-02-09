@@ -37,6 +37,7 @@ export default {
         document.getElementById("mySidenav").style.width = "50px";
         document.getElementById("main").style.marginLeft= "50px";           
       }else{
+        this.sidebarbool = true
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px"; 
       }
@@ -45,9 +46,11 @@ export default {
       sidebarVal(newVal){
         console.log(newVal)
         if(newVal){
+          this.sidebarbool = true
             document.getElementById("mySidenav").style.width = "250px";
             document.getElementById("main").style.marginLeft = "250px";            
         }else{
+          this.sidebarbool = false
             document.getElementById("mySidenav").style.width = "50px";
             document.getElementById("main").style.marginLeft= "50px";
         }
